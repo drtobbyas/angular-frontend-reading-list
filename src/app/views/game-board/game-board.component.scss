@@ -1,0 +1,40 @@
+.card {
+    word-wrap: normal;
+      .card-header {
+        padding: 0rem;
+    
+      }
+    
+    }
+    .list-group-item {
+      display: flex;
+      padding: 0.25rem;
+    }
+    
+    //
+    .g-container {
+     height: calc(100% - 0.25rem);
+      background: #fafafa;
+    }
+    
+    .game-tab {
+      display: flex;
+      justify-content: space-around;
+      border-top: 1px solid white;
+        .nav-item {
+          flex: 1 1 auto;
+          text-align: center;
+          background: #dfdfdf;
+          color: #101010;
+    
+        }
+    }
+    .nav-tabs .nav-link.active:focus {
+      background: #00aeef;
+      color: #101010;
+    
+    }
+    .nav-tabs .nav-link.active {
+      background: #00aeef;
+      color: #101010;
+    }

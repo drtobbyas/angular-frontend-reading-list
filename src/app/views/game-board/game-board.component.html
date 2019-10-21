@@ -1,0 +1,119 @@
+<div class="card g-container">
+  <nav class="navbar navbar-dark bg-dark">
+          
+            <span class="navbar-brand">{{ title }}</span>
+            <span class="nav-item btn btn-outline-primary"><i class="fa fa-gears" aria-hidden="true"></i> {{ ui.adminBtn }}</span>
+            <span class="nav-item btn btn-outline-primary"><i class="fa fa-television" aria-hidden="true"></i> {{ ui.resultBtn }}</span>
+            <span class="nav-item btn btn-outline-primary"><i class="fa fa-dashboard" aria-hidden="true"></i>{{ ui.allBet }}</span>
+            <span class="navbar-text">Account: <span>{{ accountBalance }}</span></span>
+      
+  </nav>
+  <ul class="nav nav-tabs game-tab" id="gameTab" role="tablist">
+          <li class="nav-item">
+            <a href="#main" class="nav-link active" id="mainTab" data-toggle="tab" role="tab" aria-controls="main game"
+              aria-selected="true">{{ ui.mainGame }}</a>
+          </li>
+          <li class="nav-item">
+            <a href="#double" class="nav-link" id="doubleTab" data-toggle="tab" role="tab" aria-controls="double game"
+              aria-selected="false">{{ ui.doubleGame }}</a>
+          </li>
+          <li class="nav-item">
+            <a href="#tricast" class="nav-link" id="tricastTab" data-attribute="#tricast" data-toggle="tab" role="tab"
+              aria-controls="tricast game" aria-selected="false">{{ ui.tricastGame }}</a>
+          </li>
+        </ul>
+<div class="container-fluid card">
+<!--main-game heading-->
+<div class="row card-header bg-dark text-white">
+<div class="col-2 col-sm-2 col-md-1">{{ ui.ghNo }}</div>
+<div class="col-3 col-sm- 3 col-md-2">{{ ui.ghName }}</div>
+<div class="d-none d-sm-none d-md-block col-md-2">{{ ui.ghPerf }}</div>
+<div class="d-none d-sm-none d-md-block col-md-3">{{ ui.ghLast5 }}</div>
+<div class="col-7 col-sm-7 col-md-4">
+<span class="mr-3">{{ ui.winner }}</span>
+<span>{{ ui.place2 }}</span>
+
+</div>
+</div>
+
+<div class="row tab-content">
+<!--main tab content-->
+<div class="card-body list-group col-12 col-sm-12 tab-pane fade show p-0 active" id="main" role="tabpanel"
+aria-labelledby="main-tab">
+<div class="container-fluid">
+  <div class="row list-group-item align-items-center" *ngFor="let dog of dogs">
+    <div class="col-2 col-sm-2 col-md-1"><span class="badge badge-primary">{{ dog.tagNo }}</span></div>
+    <div class="col-3 col-sm- 3 col-md-2">{{ dog.name }}</div>
+    <div class="progress d-none d-sm-none d-md-block col-md-2 px-0">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 74%" role="progressbar"
+        aria-valuenow="74" arial-valuemin="0" aria-valuemax="100">{{ dog.progress }}</div>
+    </div>
+    <div class="d-none d-sm-none d-md-block col-md-3 justify-content-around">
+      <div class="badge badge-warning mr-3" *ngFor="let a of dog.last5">{{ a }}</div>
+      
+    </div>
+    <div class="col-7 col-sm-7 col-md-4">
+      <button class="btn btn-primary mr-3" data-toggle="button" aria-pressed="false" autocomplete="off" (click)="toggleCoupon($event)">{{ dog.odd.winner }}</button>
+      <button class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">{{ dog.odd.p2 }}</button>
+
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!--double-tab content-->
+<div class="tab-pane fade" id="double" role="tabpanel" aria-labelledby="double-tab">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2 col-sm-2 col-md-1"><span class="badge badge-primary">1</span></div>
+    <div class="col-3 col-sm- 3 col-md-2">AJA</div>
+    <div class="progress d-none d-sm-none d-md-block col-md-2 px-0">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 74%" role="progressbar"
+        aria-valuenow="74" arial-valuemin="0" aria-valuemax="100">65</div>
+    </div>
+    <div class="d-none d-sm-none d-md-block col-md-3 justify-content-around">
+      <div class="badge badge-warning mr-3">3</div>
+      <div class="badge badge-warning mr-3">2</div>
+      <div class="badge badge-warning mr-3">2</div>
+      <div class="badge badge-warning mr-3">2</div>
+      <div class="badge badge-warning mr-3">2</div>
+    </div>
+    <div class="col-7 col-sm-7 col-md-4">
+      <button class="btn btn-primary mr-3" data-toggle="button" aria-pressed="false" autocomplete="off">3.27</button>
+      <button class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">3.27</button>
+
+    </div>
+  </div>
+</div>
+</div>
+
+<!--tricast tab content-->
+<div class="tab-pane" id="tricast" role="tabpanel" aria-labelledby="tricast-tab">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2 col-sm-2 col-md-1"><span class="badge badge-primary">1</span></div>
+    <div class="col-3 col-sm- 3 col-md-2">AJA</div>
+    <div class="progress d-none d-sm-none d-md-block col-md-2 px-0">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 74%" role="progressbar"
+        aria-valuenow="74" arial-valuemin="0" aria-valuemax="100">65</div>
+    </div>
+    <div class="d-none d-sm-none d-md-block col-md-3 justify-content-around">
+      <div class="badge badge-warning mr-3">3</div>
+      <div class="badge badge-warning mr-3">2</div>
+      <div class="badge badge-warning mr-3">2</div>
+      <div class="badge badge-warning mr-3">2</div>
+      <div class="badge badge-warning mr-3">2</div>
+    </div>
+    <div class="col-7 col-sm-7 col-md-4">
+      <button class="btn btn-primary mr-3" data-toggle="button" aria-pressed="false" autocomplete="off">3.27</button>
+      <button class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">3.27</button>
+
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
